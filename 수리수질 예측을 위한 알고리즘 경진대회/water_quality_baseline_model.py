@@ -81,7 +81,6 @@ baseline_model = create_baseline_model(timestep=457)
 baseline_model.summary()
 
 # 최적 성능 지점에서 모델의 가중치를 저장하도록 하는 콜백 함수
-## 모델 metric에 mape를 참고용으로 넣었지만 log가 취해진 값의 mape이므로 목적값의 mape와는 차이가 있음에 유의.
 checkpointer = ModelCheckpoint(monitor='val_loss', filepath='./base_weights_simple.hdf5', 
                                verbose=1, save_best_only=True)
 baseline_model.compile(loss=mean_absolute_percentage_error, optimizer=Adam(lr=0.001), metrics=['mae']) 
