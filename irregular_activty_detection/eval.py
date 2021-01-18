@@ -11,4 +11,4 @@ with open(submit_file, "r") as json_file:
     submit = json.load(json_file)
 
 incorrect_clips = [k for k in answer if submit[k] != answer[k]]
-print('score: {}'.format(1 - len(incorrect_clips) / len(answer)))
+print('{}'.format(1 - len(incorrect_clips) / len(answer)))
